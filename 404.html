@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Asraya Homestay</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="./assets/img/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="./assets/fonts/bodoni-moda-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/jost-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Relative paths: the site has no subdirectories, so a missing URL is
+     always one level deep (/Asraya-Homestay/nope), where these resolve
+     correctly — and they also work when serving locally. -->
+<link rel="stylesheet" href="./assets/css/style.css">
+<style>
+  .nf {
+    min-height: 100svh;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    text-align: center;
+    padding: var(--gutter);
+    background: var(--ink);
+  }
+  .nf__star { font-size: 1.6rem; color: var(--gold-light); }
+  .nf__title { margin-top: 2rem; }
+  .nf__sub { margin-top: 1.25rem; max-width: 42ch; }
+  .nf__links {
+    margin-top: 2.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+  }
+</style>
+</head>
+<body>
+
+<main class="nf on-ink">
+  <i class="star nf__star" aria-hidden="true"></i>
+  <span class="eyebrow" style="margin-top:1.5rem">Error 404</span>
+  <h1 class="display display--h1 nf__title">This room doesn&rsquo;t exist</h1>
+  <p class="lead nf__sub">
+    The page you were looking for isn&rsquo;t here. The other four rooms are.
+  </p>
+  <div class="nf__links">
+    <a class="btn btn--on-ink" href="./index.html">Back to the homepage</a>
+    <a class="tlink" href="./rooms.html">
+      See the rooms <span class="tlink__arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paharlaya.github.io/Asraya-Homestay/sitemap.xml

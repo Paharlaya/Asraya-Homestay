@@ -3,34 +3,545 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Asraya Homestay</title>
-<style>
-  :root { color-scheme: light dark; }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-    background: #faf7f2;
-    color: #2c2a26;
-  }
-  @media (prefers-color-scheme: dark) {
-    body { background: #17150f; color: #ece7dd; }
-  }
-  main { text-align: center; padding: 2rem; }
-  img { width: 120px; height: auto; margin-bottom: 1.5rem; }
-  h1 { font-size: 2rem; font-weight: 600; margin: 0 0 .5rem; letter-spacing: -.01em; }
-  p { margin: 0; opacity: .7; }
-  code { font-size: .85em; opacity: .55; display: block; margin-top: 2rem; }
-</style>
+
+<title>Asraya Homestay — Darjeeling | Above Happy Valley Tea Estate</title>
+<meta name="description" content="A four-room homestay above the Happy Valley Tea Estate in Darjeeling, with panoramic valley views, attached balconies and vegetarian home-cooked meals.">
+<link rel="canonical" href="https://paharlaya.github.io/Asraya-Homestay/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Asraya Homestay — Darjeeling">
+<meta property="og:description" content="A four-room homestay above the Happy Valley Tea Estate in Darjeeling, with panoramic valley views and attached balconies.">
+<meta property="og:image" content="https://paharlaya.github.io/Asraya-Homestay/assets/img/gallery/exterior-dusk.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A">
+
+<link rel="icon" href="./assets/img/brand/favicon.svg" type="image/svg+xml">
+
+<link rel="preload" href="./assets/fonts/bodoni-moda-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/jost-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/img/hero/balcony-golden-hour.jpg" as="image">
+<link rel="stylesheet" href="./assets/css/style.css">
+
+<!-- Sets .js before first paint so animated elements can start hidden.
+     Without JS the class never lands and everything renders visible. -->
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<main>
-  <img src="./logo.svg" alt="Asraya Homestay logo">
-  <h1>Asraya Homestay</h1>
-  <p>Site coming soon.</p>
-  <code>GitHub Pages deploy test</code>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===== HEADER ========================================================= -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a class="logo" href="./index.html">
+      <span class="logo__mark" aria-hidden="true"></span>
+      <span class="sr-only">Asraya Homestay — home</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="./index.html" aria-current="page">Home</a>
+      <a class="nav__link" href="./about.html">About</a>
+      <a class="nav__link" href="./rooms.html">Rooms</a>
+      <a class="nav__link" href="./gallery.html">Gallery</a>
+      <a class="nav__link" href="./contact.html">Contact</a>
+    </nav>
+
+    <div class="header__actions">
+      <a class="btn btn--call" href="tel:+919564827858">Call Now</a>
+      <button class="burger" type="button" id="burger"
+              aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span class="burger__box" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MOBILE DRAWER ================================================== -->
+<div class="drawer" id="drawer" data-open="false" aria-hidden="true">
+  <nav class="drawer__list" aria-label="Mobile">
+    <a class="drawer__link" href="./index.html" aria-current="page">Home</a>
+    <a class="drawer__link" href="./about.html">About</a>
+    <a class="drawer__link" href="./rooms.html">Rooms</a>
+    <a class="drawer__link" href="./gallery.html">Gallery</a>
+    <a class="drawer__link" href="./contact.html">Contact</a>
+  </nav>
+  <div class="drawer__foot">
+    <span class="rule" style="width:180px" aria-hidden="true"><i class="star"></i></span>
+    <a class="btn btn--on-ink" href="tel:+919564827858">Call +91 95648 27858</a>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+
+  <!-- ===== HERO ========================================================
+       Even halves: the thesis on the left, the portal on the right.
+       ================================================================== -->
+  <section class="hero">
+    <div class="container hero__grid">
+
+      <div class="hero__intro">
+        <span class="eyebrow">Darjeeling &middot; West Bengal</span>
+        <span class="tick" aria-hidden="true"></span>
+
+        <h1 class="display display--hero hero__title" id="hero-title">
+          <span class="word">Your Gateway</span>
+          <span class="word">to Relaxation</span>
+        </h1>
+
+        <p class="lead hero__lead">
+          Welcome to Darjeeling: Where Nature Meets Tranquility
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn" href="./contact.html#get-in-touch">Book Now</a>
+          <a class="tlink" href="./rooms.html">
+            Explore rooms <span class="tlink__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <figure class="arch hero__arch" id="hero-arch">
+        <span class="arc hero__arc" aria-hidden="true"></span>
+        <div class="arch__frame">
+          <img src="./assets/img/hero/balcony-golden-hour.jpg"
+               srcset="./assets/img/hero/balcony-golden-hour-sm.jpg 640w,
+                       ./assets/img/hero/balcony-golden-hour.jpg 1280w"
+               sizes="(max-width: 720px) 92vw, 400px"
+               alt="Two chairs and a folding table on an Asraya balcony at golden hour, looking out over Darjeeling town spread across the hillside"
+               width="1280" height="960" fetchpriority="high" decoding="async"
+               data-parallax>
+        </div>
+      </figure>
+
+    </div>
+  </section>
+
+
+  <!-- ===== WELCOME ====================================================== -->
+  <section class="section section--bone">
+    <div class="container split">
+
+      <figure class="mount split__media" data-reveal>
+        <div class="mount__frame">
+          <img src="./assets/img/gallery/guest-room.jpg"
+               srcset="./assets/img/gallery/guest-room-sm.jpg 800w,
+                       ./assets/img/gallery/guest-room.jpg 1600w"
+               sizes="(max-width: 860px) 92vw, 46vw"
+               alt="A guest room at Asraya with a dark wooden headboard, white bedding and sliding doors opening onto the balcony"
+               width="1600" height="1200" loading="lazy" decoding="async" data-parallax>
+        </div>
+      </figure>
+
+      <div class="split__body" data-reveal>
+        <span class="eyebrow">The house</span>
+        <h2 class="display display--h2">Nestled away from<br>the crowded part of town</h2>
+        <div class="prose">
+          <p>Asraya is a charming homestay nestled away from the crowded part of town, perfectly situated above the Happy Valley Tea Estate and below Shrubbery Nightingale Park.</p>
+          <p>Our beautiful, cozy rooms offer panoramic views of the valley, hills, and the picturesque tea gardens surrounding Darjeeling. Enjoy a serene and tranquil stay with us, surrounded by nature&rsquo;s beauty.</p>
+        </div>
+        <a class="tlink" href="./about.html">
+          View more <span class="tlink__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===== THE FOUR ROOMS ===============================================
+       Named for screen actors with Darjeeling roots — the most distinctive
+       thing about this property, and the thing the old site never explained.
+       ================================================================== -->
+  <section class="section">
+    <div class="container">
+
+      <div class="shead shead--split" data-reveal>
+        <div>
+          <span class="eyebrow">The rooms</span>
+          <span class="tick" aria-hidden="true"></span>
+          <h2 class="display display--h2 shead__title">Four rooms,<br>four namesakes</h2>
+        </div>
+        <p class="lead" style="max-width:38ch">
+          Experience the allure of Darjeeling from the comfort of our inviting rooms &mdash;
+          a romantic escape, a family vacation, or a solo adventure.
+        </p>
+      </div>
+
+      <div class="rooms-grid" data-reveal-stagger>
+
+        <a class="rcard" href="./rooms.html#erick-avari" style="--i:0">
+          <figure class="arch rcard__media">
+            <div class="arch__frame">
+              <img src="./assets/img/rooms/erick-avari.jpg"
+                   srcset="./assets/img/rooms/erick-avari-sm.jpg 600w,
+                           ./assets/img/rooms/erick-avari.jpg 1200w"
+                   sizes="(max-width: 520px) 92vw, (max-width: 1024px) 46vw, 23vw"
+                   alt="The Erick Avari room: a wide bed facing sliding balcony doors, with a full-length mirror opposite"
+                   width="1200" height="1600" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <h3 class="rcard__name">Erick Avari</h3>
+          <p class="rcard__note">The largest of the four, with a full-length mirror facing the valley.</p>
+          <span class="rcard__more">View room <span aria-hidden="true">&rarr;</span></span>
+        </a>
+
+        <a class="rcard" href="./rooms.html#vivien-leigh" style="--i:1">
+          <figure class="arch rcard__media">
+            <div class="arch__frame">
+              <img src="./assets/img/rooms/vivien-leigh.jpg"
+                   srcset="./assets/img/rooms/vivien-leigh-sm.jpg 640w,
+                           ./assets/img/rooms/vivien-leigh.jpg 1280w"
+                   sizes="(max-width: 520px) 92vw, (max-width: 1024px) 46vw, 23vw"
+                   alt="The Vivien Leigh room: a corner room with wide balcony doors opening to mist over the valley"
+                   width="1280" height="960" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <h3 class="rcard__name">Vivien Leigh</h3>
+          <p class="rcard__note">A corner room with the widest balcony doors in the house.</p>
+          <span class="rcard__more">View room <span aria-hidden="true">&rarr;</span></span>
+        </a>
+
+        <a class="rcard" href="./rooms.html#sylvia-coleridge" style="--i:2">
+          <figure class="arch rcard__media">
+            <div class="arch__frame">
+              <img src="./assets/img/rooms/sylvia-coleridge.jpg"
+                   srcset="./assets/img/rooms/sylvia-coleridge-sm.jpg 700w,
+                           ./assets/img/rooms/sylvia-coleridge.jpg 1400w"
+                   sizes="(max-width: 520px) 92vw, (max-width: 1024px) 46vw, 23vw"
+                   alt="The Sylvia Coleridge room: pine-panelled walls, a skylight cut into the pitched roof, and red chairs on the balcony beyond"
+                   width="1400" height="1050" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <h3 class="rcard__name">Sylvia Coleridge</h3>
+          <p class="rcard__note">Pine-panelled to the eaves, with a skylight over the bed.</p>
+          <span class="rcard__more">View room <span aria-hidden="true">&rarr;</span></span>
+        </a>
+
+        <a class="rcard" href="./rooms.html#anna-kashfi" style="--i:3">
+          <figure class="arch rcard__media">
+            <div class="arch__frame">
+              <img src="./assets/img/rooms/anna-kashfi.jpg"
+                   srcset="./assets/img/rooms/anna-kashfi-sm.jpg 700w,
+                           ./assets/img/rooms/anna-kashfi.jpg 1400w"
+                   sizes="(max-width: 520px) 92vw, (max-width: 1024px) 46vw, 23vw"
+                   alt="The Anna Kashfi room: late afternoon light flooding through sliding doors onto the bed"
+                   width="1400" height="1050" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <h3 class="rcard__name">Anna Kashfi</h3>
+          <p class="rcard__note">West facing &mdash; late light turns the whole room amber.</p>
+          <span class="rcard__more">View room <span aria-hidden="true">&rarr;</span></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FACILITIES =================================================== -->
+  <section class="section section--tight section--bone">
+    <div class="container">
+
+      <div class="shead" data-reveal>
+        <span class="eyebrow">In every room</span>
+        <span class="tick" aria-hidden="true"></span>
+      </div>
+
+      <ul class="fac-grid" data-reveal-stagger>
+        <li class="fac" style="--i:0">
+          <span class="fac__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 3v6"/>
+              <path d="M8.5 15a7.5 7.5 0 0 1 15 0z"/>
+              <path d="M11 20v2M16 22.5v2M21 20v2M13.5 26v2M18.5 26v2"/>
+            </svg>
+          </span>
+          <span class="fac__name">Attached Bathroom</span>
+        </li>
+        <li class="fac" style="--i:1">
+          <span class="fac__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 15a11 11 0 0 1 22 0"/>
+              <path d="M3 19.5h26M3 28.5h26"/>
+              <path d="M7 19.5v9M13 19.5v9M19 19.5v9M25 19.5v9"/>
+            </svg>
+          </span>
+          <span class="fac__name">Attached Balcony</span>
+        </li>
+        <li class="fac" style="--i:2">
+          <span class="fac__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="16" cy="16" r="2.5"/>
+              <path d="M22.5 9.5a9 9 0 0 1 0 13M9.5 22.5a9 9 0 0 1 0-13"/>
+              <path d="M26.5 5.5a14 14 0 0 1 0 21M5.5 26.5a14 14 0 0 1 0-21"/>
+            </svg>
+          </span>
+          <span class="fac__name">Open Meditation Space</span>
+        </li>
+        <li class="fac" style="--i:3">
+          <span class="fac__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 11V4h7M21 4h7v7M28 21v7h-7M11 28H4v-7"/>
+              <circle cx="16" cy="16" r="3"/>
+            </svg>
+          </span>
+          <span class="fac__name">Spacious Location</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ===== TEA GARDENS ================================================== -->
+  <section class="section">
+    <div class="container split split--reverse">
+
+      <figure class="mount mount--flip split__media" data-reveal>
+        <div class="mount__frame">
+          <img src="./assets/img/gallery/valley-tea-view.jpg"
+               srcset="./assets/img/gallery/valley-tea-view-sm.jpg 800w,
+                       ./assets/img/gallery/valley-tea-view.jpg 1600w"
+               sizes="(max-width: 860px) 92vw, 46vw"
+               alt="The view from an Asraya balcony across the valley to the tea gardens and forested ridges beyond"
+               width="1600" height="1200" loading="lazy" decoding="async" data-parallax>
+        </div>
+      </figure>
+
+      <div class="split__body" data-reveal>
+        <span class="eyebrow">Below the house</span>
+        <h2 class="display display--h2">The tea gardens</h2>
+        <div class="prose">
+          <p>Darjeeling is renowned for its sprawling tea estates that carpet the hillsides in vibrant shades of green. Take a leisurely stroll through the fragrant tea gardens, where you can witness firsthand the meticulous process of tea cultivation and sample the finest Darjeeling tea, celebrated worldwide for its exquisite flavor.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===== GALLERY STRIP ================================================ -->
+  <section class="section section--tight">
+    <div class="container">
+
+      <div class="shead shead--split" data-reveal>
+        <div>
+          <span class="eyebrow">Gallery</span>
+          <span class="tick" aria-hidden="true"></span>
+          <h2 class="display display--h2 shead__title">A house above a valley</h2>
+        </div>
+        <a class="tlink" href="./gallery.html">
+          View full gallery <span class="tlink__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="mosaic" data-reveal>
+        <a class="mtile mtile--wide mtile--tall" href="./gallery.html">
+          <img src="./assets/img/gallery/valley-tea-view.jpg"
+               srcset="./assets/img/gallery/valley-tea-view-sm.jpg 800w,
+                       ./assets/img/gallery/valley-tea-view.jpg 1600w"
+               sizes="(max-width: 760px) 100vw, 50vw"
+               alt="Valley and tea gardens seen from the balcony" width="1600" height="1200" loading="lazy" decoding="async">
+          <span class="mtile__veil" aria-hidden="true"></span>
+          <span class="mtile__cap">Tea garden view</span>
+        </a>
+        <a class="mtile" href="./gallery.html">
+          <img src="./assets/img/gallery/bath-vanity-sm.jpg" alt="Marble bathroom with vessel basin"
+               width="800" height="600" loading="lazy" decoding="async">
+          <span class="mtile__veil" aria-hidden="true"></span>
+          <span class="mtile__cap">Attached bathroom</span>
+        </a>
+        <a class="mtile" href="./gallery.html">
+          <img src="./assets/img/gallery/balcony-night-sm.jpg" alt="Balcony at night above the town lights"
+               width="640" height="480" loading="lazy" decoding="async">
+          <span class="mtile__veil" aria-hidden="true"></span>
+          <span class="mtile__cap">Evening view</span>
+        </a>
+        <a class="mtile mtile--wide" href="./gallery.html">
+          <img src="./assets/img/hero/balcony-golden-hour.jpg"
+               srcset="./assets/img/hero/balcony-golden-hour-sm.jpg 800w,
+                       ./assets/img/hero/balcony-golden-hour.jpg 1600w"
+               sizes="(max-width: 760px) 100vw, 50vw"
+               alt="Two chairs and a table on an Asraya balcony at golden hour, above Darjeeling town" width="1280" height="960" loading="lazy" decoding="async">
+          <span class="mtile__veil" aria-hidden="true"></span>
+          <span class="mtile__cap">Golden hour</span>
+        </a>
+        <a class="mtile mtile--wide mtile--tall" href="./gallery.html">
+          <img src="./assets/img/gallery/garden-blooms.jpg"
+               srcset="./assets/img/gallery/garden-blooms-sm.jpg 800w,
+                       ./assets/img/gallery/garden-blooms.jpg 1600w"
+               sizes="(max-width: 760px) 100vw, 50vw"
+               alt="Potted portulaca in flower on the terrace, against Asraya's saffron facade and green window frames" width="1600" height="1200" loading="lazy" decoding="async">
+          <span class="mtile__veil" aria-hidden="true"></span>
+          <span class="mtile__cap">The terrace</span>
+        </a>
+        <a class="mtile mtile--wide mtile--tall" href="./gallery.html">
+          <img src="./assets/img/gallery/guest-room.jpg"
+               srcset="./assets/img/gallery/guest-room-sm.jpg 800w,
+                       ./assets/img/gallery/guest-room.jpg 1600w"
+               sizes="(max-width: 760px) 100vw, 50vw"
+               alt="A guest room with balcony doors" width="1600" height="1200" loading="lazy" decoding="async">
+          <span class="mtile__veil" aria-hidden="true"></span>
+          <span class="mtile__cap">Guest room</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== QUEEN OF THE HILLS (the page turns to night) ================= -->
+  <section class="section section--ink feature on-ink">
+    <div class="container feature__grid">
+
+      <div data-reveal>
+        <span class="eyebrow">Queen of the Hills</span>
+        <span class="tick" aria-hidden="true"></span>
+        <h2 class="display display--h2 shead__title">Why the rooms<br>carry these names</h2>
+        <div class="prose" style="margin-top:1.75rem">
+          <p>Darjeeling, known as the &lsquo;Queen of the Hills,&rsquo; is famous for its breathtaking landscapes and vibrant culture. With a rich tradition of music and a legacy of Hollywood actors originating from this charming town, Darjeeling exudes an artistic spirit.</p>
+          <p>Inspired by this cultural heritage, &lsquo;Asraya&rsquo; homestay embraces a Hollywood theme, offering a unique and memorable experience amidst the beauty of the hills.</p>
+        </div>
+        <div class="chips" style="margin-top:2rem">
+          <span class="chip"><i class="star" aria-hidden="true"></i>Erick Avari</span>
+          <span class="chip"><i class="star" aria-hidden="true"></i>Anna Kashfi</span>
+          <span class="chip"><i class="star" aria-hidden="true"></i>Sylvia Coleridge</span>
+          <span class="chip"><i class="star" aria-hidden="true"></i>Vivien Leigh</span>
+        </div>
+      </div>
+
+      <figure class="mount feature__media" data-reveal>
+        <div class="mount__frame">
+          <img src="./assets/img/gallery/exterior-dusk.jpg"
+               srcset="./assets/img/gallery/exterior-dusk-sm.jpg 800w,
+                       ./assets/img/gallery/exterior-dusk.jpg 1600w"
+               sizes="(max-width: 860px) 92vw, 50vw"
+               alt="Asraya's saffron-painted cottage lit from within at dusk, with the lights of Darjeeling town scattered on the hillside below"
+               width="1600" height="1200" loading="lazy" decoding="async" data-parallax>
+        </div>
+      </figure>
+
+    </div>
+  </section>
+
+
+  <!-- ===== BOOKING BAND ================================================= -->
+  <section class="section section--tight section--ink booking on-ink" id="book">
+    <div class="container container--narrow">
+      <div data-reveal>
+        <span class="eyebrow">Book your stay</span>
+        <h2 class="display display--h2 booking__title">Come up for a few days</h2>
+        <p class="lead booking__sub">
+          Message us on WhatsApp with your dates, or call &mdash; we answer all three numbers.
+        </p>
+
+        <div class="booking__numbers">
+          <a class="booking__num" href="tel:+919564827858">+91 95648 27858</a>
+          <a class="booking__num" href="tel:+919002153003">+91 90021 53003</a>
+          <a class="booking__num" href="tel:+917699183995">+91 76991 83995</a>
+        </div>
+
+        <div class="booking__cta">
+          <a class="btn btn--on-ink" href="./contact.html#get-in-touch">Enquire now</a>
+          <a class="tlink" href="mailto:asraya.homestay@gmail.com">
+            asraya.homestay@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+
+<!-- ===== FOOTER ========================================================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+
+      <div>
+        <span class="footer__logo" aria-hidden="true"></span>
+        <p style="margin-top:1.5rem;max-width:34ch;font-size:var(--fs-small)">
+          A four-room homestay above the Happy Valley Tea Estate, Darjeeling.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="footer__title">Address</h2>
+        <address class="footer__list" style="font-style:normal">
+          <span>Vallima Cottage 3</span>
+          <span>Hooker Road</span>
+          <span>Darjeeling 734101</span>
+          <span>West Bengal, India</span>
+        </address>
+      </div>
+
+      <div>
+        <h2 class="footer__title">Get in touch</h2>
+        <ul class="footer__list">
+          <li><a href="tel:+919564827858">+91 95648 27858</a></li>
+          <li><a href="tel:+919002153003">+91 90021 53003</a></li>
+          <li><a href="tel:+917699183995">+91 76991 83995</a></li>
+          <li><a href="mailto:asraya.homestay@gmail.com">asraya.homestay@gmail.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2026</span> Asraya Homestay, Darjeeling. All rights reserved.</span>
+      <span class="footer__craft">Crafted by
+        <a href="https://cedarnestweb.vercel.app/" target="_blank" rel="noopener">Cedar Nest Web</a>
+      </span>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="https://asrayahomestay.com/privacy/">Privacy</a>
+        <a href="https://asrayahomestay.com/terms-and-conditions/">Terms &amp; Conditions</a>
+        <a href="https://asrayahomestay.com/accessibility-notice/">Accessibility Notice</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ===== FLOATING WHATSAPP ============================================== -->
+<a class="wa" id="wa" data-visible="false"
+   href="https://wa.me/919564827858?text=Hello%20Asraya%20Homestay%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay."
+   target="_blank" rel="noopener">
+  <span class="wa__ring" aria-hidden="true"></span>
+  <span class="wa__icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.44 9.44 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.42 9.42 0 0 1-1.44-5.03c0-5.2 4.24-9.44 9.45-9.44 2.52 0 4.89.99 6.67 2.77a9.38 9.38 0 0 1 2.76 6.68c0 5.2-4.24 9.44-9.45 9.44zM20.5 3.49A11.36 11.36 0 0 0 12.04 0C5.77 0 .67 5.1.67 11.37c0 2 .52 3.95 1.52 5.67L.57 24l7.1-1.86a11.34 11.34 0 0 0 5.42 1.38h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>
+  </span>
+  <span class="wa__label">Chat with us</span>
+  <span class="sr-only">Chat with Asraya Homestay on WhatsApp (opens in a new tab)</span>
+</a>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Asraya Homestay",
+  "description": "A four-room homestay above the Happy Valley Tea Estate in Darjeeling, with panoramic valley views, attached balconies and vegetarian home-cooked meals.",
+  "url": "https://paharlaya.github.io/Asraya-Homestay/",
+  "image": "https://paharlaya.github.io/Asraya-Homestay/assets/img/gallery/exterior-dusk.jpg",
+  "email": "asraya.homestay@gmail.com",
+  "telephone": ["+919564827858", "+919002153003", "+917699183995"],
+  "numberOfRooms": 4,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Vallima Cottage 3, Hooker Road",
+    "addressLocality": "Darjeeling",
+    "addressRegion": "West Bengal",
+    "postalCode": "734101",
+    "addressCountry": "IN"
+  },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Attached Bathroom", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Attached Balcony", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Open Meditation Space", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "High-speed internet access", "value": true }
+  ]
+}
+</script>
+
+<script src="./assets/js/main.js" defer></script>
 </body>
 </html>
