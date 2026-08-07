@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Contact — Asraya Homestay, Darjeeling</title>
-<meta name="description" content="Contact Asraya Homestay, Vallima Cottage 3, Hooker Road, Darjeeling 734101. Send your dates on WhatsApp, call +91 95648 27858, or email asraya.homestay@gmail.com.">
-<link rel="canonical" href="https://paharlaya.github.io/Asraya-Homestay/contact.html">
+<meta name="description" content="Contact Asraya Homestay, Vallima Cottage 3, Hooker Road, Darjeeling 734101. Send your dates on WhatsApp, call +91 90021 53003, or email asraya.homestay@gmail.com.">
+<link rel="canonical" href="https://asrayahomestay.com/contact.html">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Contact — Asraya Homestay, Darjeeling">
 <meta property="og:description" content="Send your dates on WhatsApp, or call — we answer all three numbers.">
-<meta property="og:image" content="https://paharlaya.github.io/Asraya-Homestay/assets/img/gallery/balcony-night.jpg">
+<meta property="og:image" content="https://asrayahomestay.com/assets/img/gallery/balcony-night.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0A0A">
 
@@ -40,7 +40,7 @@
       <a class="nav__link" href="./contact.html" aria-current="page">Contact</a>
     </nav>
     <div class="header__actions">
-      <a class="btn btn--call" href="tel:+919564827858">Call Now</a>
+      <a class="btn btn--call" href="tel:+919002153003">Call Now</a>
       <button class="burger" type="button" id="burger"
               aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
         <span class="burger__box" aria-hidden="true"><span></span><span></span></span>
@@ -59,7 +59,7 @@
   </nav>
   <div class="drawer__foot">
     <span class="rule" style="width:180px" aria-hidden="true"><i class="star"></i></span>
-    <a class="btn btn--on-ink" href="tel:+919564827858">Call +91 95648 27858</a>
+    <a class="btn btn--on-ink" href="tel:+919002153003">Call +91 90021 53003</a>
   </div>
 </div>
 
@@ -119,18 +119,17 @@
         <div class="cblock">
           <h3 class="cblock__title">Call us</h3>
           <ul class="cblock__body">
-            <li><a class="clink" href="tel:+919564827858">+91 95648 27858</a></li>
             <li><a class="clink" href="tel:+919002153003">+91 90021 53003</a></li>
-            <li><a class="clink" href="tel:+917699183995">+91 76991 83995</a></li>
+          
           </ul>
         </div>
 
         <div class="cblock">
           <h3 class="cblock__title">WhatsApp</h3>
           <p class="cblock__body">
-            <a class="clink" href="https://wa.me/919564827858?text=Hello%20Asraya%20Homestay%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay."
+            <a class="clink" href="https://wa.me/919002153003?text=Hello%20Asraya%20Homestay%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay."
                target="_blank" rel="noopener">
-              Message +91 95648 27858
+              Message +91 90021 53003
               <span class="sr-only">(opens WhatsApp in a new tab)</span>
             </a>
           </p>
@@ -145,7 +144,7 @@
       <div class="contact__form" data-reveal>
         <h2 class="display display--h3">Book your stay</h2>
         <p class="form__intro">
-          Fill this in and we will open WhatsApp with your details ready to send.
+          All fields except the message are needed before we can open WhatsApp.
         </p>
 
         <form id="enquiry" novalidate>
@@ -175,27 +174,29 @@
           <div class="field-row">
             <div class="field">
               <label class="field__label" for="f-checkin">Check in</label>
-              <input class="field__input" id="f-checkin" name="checkin" type="date">
+              <input class="field__input" id="f-checkin" name="checkin" type="date" data-required>
               <p class="field__error" aria-live="polite"></p>
             </div>
             <div class="field">
               <label class="field__label" for="f-checkout">Check out</label>
-              <input class="field__input" id="f-checkout" name="checkout" type="date">
+              <input class="field__input" id="f-checkout" name="checkout" type="date" data-required>
               <p class="field__error" aria-live="polite"></p>
             </div>
           </div>
 
           <div class="field-row">
             <div class="field">
-              <label class="field__label" for="f-guests">Guests</label>
+              <label class="field__label" for="f-guests">Guests
+                <span class="field__hint">max 3 per room</span></label>
               <input class="field__input" id="f-guests" name="guests" type="number"
-                     min="1" max="12" step="1" value="2" inputmode="numeric">
+                     min="1" max="12" step="1" value="2" inputmode="numeric" data-required>
               <p class="field__error" aria-live="polite"></p>
             </div>
             <div class="field">
               <label class="field__label" for="f-room">Room</label>
-              <select class="field__input" id="f-room" name="room">
-                <option value="any">No preference</option>
+              <select class="field__input" id="f-room" name="room" data-required>
+                <option value="" selected disabled>Choose a room</option>
+                <option value="No preference">No preference</option>
                 <option value="Erick Avari">Erick Avari</option>
                 <option value="Vivien Leigh">Vivien Leigh</option>
                 <option value="Sylvia Coleridge">Sylvia Coleridge</option>
@@ -206,7 +207,7 @@
           </div>
 
           <div class="field">
-            <label class="field__label" for="f-message">Message</label>
+            <label class="field__label" for="f-message">Message <span class="field__opt">optional</span></label>
             <textarea class="field__input field__input--area" id="f-message"
                       name="message" rows="4"
                       placeholder="Anything we should know?"></textarea>
@@ -269,15 +270,13 @@
     <div class="container container--narrow">
       <div data-reveal>
         <span class="eyebrow">Book your stay</span>
-        <h2 class="display display--h2 booking__title">We answer all three</h2>
+        <h2 class="display display--h2 booking__title">Talk to us</h2>
         <div class="booking__numbers">
-          <a class="booking__num" href="tel:+919564827858">+91 95648 27858</a>
           <a class="booking__num" href="tel:+919002153003">+91 90021 53003</a>
-          <a class="booking__num" href="tel:+917699183995">+91 76991 83995</a>
         </div>
         <div class="booking__cta">
           <a class="btn btn--on-ink"
-             href="https://wa.me/919564827858?text=Hello%20Asraya%20Homestay%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay."
+             href="https://wa.me/919002153003?text=Hello%20Asraya%20Homestay%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay."
              target="_blank" rel="noopener">Message on WhatsApp</a>
           <a class="tlink" href="mailto:asraya.homestay@gmail.com">asraya.homestay@gmail.com</a>
         </div>
@@ -308,9 +307,8 @@
       <div>
         <h2 class="footer__title">Get in touch</h2>
         <ul class="footer__list">
-          <li><a href="tel:+919564827858">+91 95648 27858</a></li>
           <li><a href="tel:+919002153003">+91 90021 53003</a></li>
-          <li><a href="tel:+917699183995">+91 76991 83995</a></li>
+          
           <li><a href="mailto:asraya.homestay@gmail.com">asraya.homestay@gmail.com</a></li>
         </ul>
       </div>
@@ -330,7 +328,7 @@
 </footer>
 
 <a class="wa" id="wa" data-visible="false"
-   href="https://wa.me/919564827858?text=Hello%20Asraya%20Homestay%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay."
+   href="https://wa.me/919002153003?text=Hello%20Asraya%20Homestay%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay."
    target="_blank" rel="noopener">
   <span class="wa__ring" aria-hidden="true"></span>
   <span class="wa__icon" aria-hidden="true">

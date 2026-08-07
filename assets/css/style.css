@@ -1820,3 +1820,43 @@ select.field__input {
   transition: background-size .4s var(--ease);
 }
 .footer__craft a:hover { background-size: 100% 1px; }
+
+
+/* ---- 14.4  Occupancy note -------------------------------------------------
+   Three guests is a hard limit per room, so it is stated on every room block
+   rather than buried in a policy page — it changes whether a family books.
+   ------------------------------------------------------------------------ */
+
+.note {
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+  margin-top: 1.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--bone);
+  border-left: 2px solid var(--gold);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+.note strong { color: var(--ink); font-weight: 500; }
+.note__star { font-size: .5rem; color: var(--gold-deep); position: relative; top: -.15em; }
+
+/* the note sits on bone in alternating sections, so flip it there */
+.section--bone .note { background: var(--white); }
+
+
+/* ---- 14.5  Field annotations ---------------------------------------------- */
+
+.field__opt,
+.field__hint {
+  margin-left: .5rem;
+  font-size: var(--fs-chip);
+  font-weight: 400;
+  letter-spacing: .04em;
+  text-transform: none;
+  color: rgba(74, 72, 68, .6);
+}
+
+/* a disabled placeholder option should read as a prompt, not a value */
+select.field__input:has(option[value=""]:checked) { color: rgba(74, 72, 68, .55); }

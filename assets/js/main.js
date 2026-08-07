@@ -332,7 +332,7 @@
      browser blocks the popup, an inline link is revealed instead.
      --------------------------------------------------------------------- */
 
-  var WA_NUMBER = '919564827858';
+  var WA_NUMBER = '919002153003';
   var form = document.getElementById('enquiry');
 
   function fieldError(input, message) {
@@ -353,11 +353,26 @@
       var message = '';
 
       if (!value) {
-        message = 'Please fill this in.';
+        // say what is missing, in the field's own terms
+        if (input.tagName === 'SELECT')          message = 'Please choose a room.';
+        else if (input.type === 'date')          message = 'Please pick a date.';
+        else                                     message = 'Please fill this in.';
       } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
         message = 'That email address does not look right.';
       } else if (input.type === 'tel' && value.replace(/\D/g, '').length < 7) {
         message = 'Please enter a number we can reach you on.';
+      } else if (input.type === 'number') {
+        var n = Number(value);
+        var max = Number(input.max) || Infinity;
+        var min = Number(input.min) || 1;
+        if (!Number.isInteger(n) || n < min) message = 'Please enter how many guests are coming.';
+        else if (n > max) message = 'We can host up to ' + max + ' guests across the four rooms.';
+      } else if (input.type === 'date') {
+        // a stay cannot start in the past
+        var today = new Date(); today.setHours(0, 0, 0, 0);
+        if (input.name === 'checkin' && new Date(value + 'T00:00:00') < today) {
+          message = 'Check-in cannot be in the past.';
+        }
       }
 
       fieldError(input, message);
@@ -399,7 +414,7 @@
       if (d.checkin)  lines.push('Check in: ' + prettyDate(d.checkin));
       if (d.checkout) lines.push('Check out: ' + prettyDate(d.checkout));
       if (d.guests)   lines.push('Guests: ' + d.guests);
-      if (d.room && d.room !== 'any') lines.push('Room: ' + d.room);
+      if (d.room)     lines.push('Room: ' + d.room);
       if (d.message)  lines.push('', d.message);
 
       var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
