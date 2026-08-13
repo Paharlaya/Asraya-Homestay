@@ -740,7 +740,17 @@ a { color: inherit; text-decoration: none; }
 }
 
 .wa:hover, .wa:focus-visible { gap: .25rem; padding-right: 1.5rem; }
-.wa:hover .wa__label, .wa:focus-visible .wa__label { max-width: 170px; }
+
+/* Wide enough for the longest label with slack for a font fallback — at
+   170px the final letter of "BOOK ON WHATSAPP" was clipped by the overflow.
+   The negative margin cancels the trailing letter-space that would otherwise
+   leave an uneven gap before the pill's edge; it is scoped to the expanded
+   state so it cannot squash the collapsed circle into an oval. */
+.wa:hover .wa__label,
+.wa:focus-visible .wa__label {
+  max-width: 14rem;
+  margin-right: calc(var(--track-eyebrow) * -1);
+}
 
 /* soft gold ring, breathing */
 .wa__ring {
